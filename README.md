@@ -15,7 +15,7 @@ This project aims to calculate and compare the net wage and its current benefits
     <a href="https://github.com/leonardofaria00/calculo-salario-CLT"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/leonardofaria00/calculo-salario-CLT">View Demo</a>
+    <a href="https://calculo-salario-clt.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/leonardofaria00/calculo-salario-CLT/issues">Report Bug</a>
     ·
