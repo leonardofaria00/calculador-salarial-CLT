@@ -7,15 +7,14 @@
 <p align="center">
     Este projeto visa calcular e comparar o salário líquido e seus benefícios atuais com uma nova oportunidade de
     trabalho e por fim, mostrar a oportunidade mais vantajosa.
-
-    <br>
-    <a href="https://calculo-salario-clt.vercel.app/" target="_blank">View Demo</a>
+    <br />
+    <br />
+    <a href="https://calculo-salario-clt.vercel.app/">View Demo</a>
     ·
     <a href="https://github.com/leonardofaria00/calculo-salario-CLT/issues">Report Bug</a>
     ·
     <a href="https://github.com/leonardofaria00/calculo-salario-CLT/issues">Request Feature</a>
-
-</p>
+  </p>
 </p>
 
 ## Justification and Motivation <br>
@@ -24,18 +23,18 @@
     Observando a dificuldade de analisar uma oportunidade, considerando o salário e seus benefícios, e por não encontrar
     comparadores de salários eficiêntes na Web. <br>
     Tomamos a decisão de desenvolver uma solução para facilitar a tomada de decisão do profissional redigo pela
-    <a href="http://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm"> Consolidação das Leis do Trabalho - CLT
+    <a href="http://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm" target="_blank"> Consolidação das Leis do Trabalho - CLT
     </a>.
 </p>
+
 ## Description <br>
 
 <p>
     A calculadora de salário deverá utilizar como base as tabelas do INSS e do IRRF (atualizadas) para realizar o
     cálculo do salário líquido final, deduzindo todos os descontos, como por exemplo, a alíquita do INSS, alíquota do
-    IRRF e parcela dedutível do IRRF, a quantidade de dependentes e pensão alimentícia.<br>
-
+    IRRF e parcela dedutível do IRRF, a quantidade de dependentes e pensão alimentícia.
+    <br>
     Usando como remuneração o salário bruto, vale alimentação, vale refeição, vale transporte e gratificações.
-
 </p>
 
 ## Alíquota do INSS 2021 <br>
