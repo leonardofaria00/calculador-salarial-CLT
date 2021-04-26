@@ -21,8 +21,8 @@
 
 <p>
     Observando a dificuldade de analisar uma oportunidade, considerando o salário e seus benefícios, e por não encontrar
-    comparadores de salários eficiêntes na Web. <br>
-    Tomamos a decisão de desenvolver uma solução para facilitar a tomada de decisão do profissional redigo pela
+    comparadores de salários eficientes na Web. <br>
+    Tomamos a decisão de desenvolver uma solução para facilitar a tomada de decisão do profissional regido pela
     <a href="http://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm" target="_blank"> Consolidação das Leis do Trabalho - CLT
     </a>.
 </p>
