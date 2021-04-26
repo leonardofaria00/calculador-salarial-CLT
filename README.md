@@ -9,7 +9,7 @@
     trabalho e por fim, mostrar a oportunidade mais vantajosa.
     <br />
     <br />
-    <a href="https://calculo-salario-clt.vercel.app/">View Demo</a>
+    <a href="https://calculo-salario-clt.vercel.app/" target="_blank">View Demo</a>
     ·
     <a href="https://github.com/leonardofaria00/calculo-salario-CLT/issues">Report Bug</a>
     ·
