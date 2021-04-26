@@ -1,89 +1,94 @@
-<!-- PROJECT LOGO -->
-<br />
 <p align="center">
-  <!--<a href="https://github.com/leonardofaria00/calculo-salario-CLT">
-    <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="Logo" width="80" height="80">
-  </a>-->
 
-  <h3 align="center">CLT salary calculator - Between Job comparator.</h3>
+<h3 align="center">Calculador de Salário CLT - Comparador entre oportunidades.</h3>
 
-## Objective
+## Objective <br>
 
-  <p align="center">
-This project aims to calculate and compare the net wage and its current benefits with a new job opportunity. Finally, show what is the best opportunity.
+<p align="center">
+    Este projeto visa calcular e comparar o salário líquido e seus benefícios atuais com uma nova oportunidade de
+    trabalho e por fim, mostrar a oportunidade mais vantajosa.
 
-<br/>
+    <br>
     <a href="https://calculo-salario-clt.vercel.app/" target="_blank">View Demo</a>
     ·
     <a href="https://github.com/leonardofaria00/calculo-salario-CLT/issues">Report Bug</a>
     ·
     <a href="https://github.com/leonardofaria00/calculo-salario-CLT/issues">Request Feature</a>
-  </p>
+
+</p>
 </p>
 
-## Justification and Motivation
+## Justification and Motivation <br>
 
-Observing the difficulty of describing an opportunity, taking into account the salary and its benefits, and for not finding comparators of effective wages on the web, we make the decision to develop a solution to facilitate the decision-making of the proffection that adopt the <a src="http://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm"> Consolidation of work laws - CLT </a>.
+<p>
+    Observando a dificuldade de analisar uma oportunidade, considerando o salário e seus benefícios, e por não encontrar
+    comparadores de salários eficiêntes na Web. <br>
+    Tomamos a decisão de desenvolver uma solução para facilitar a tomada de decisão do profissional redigo pela
+    <a href="http://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm"> Consolidação das Leis do Trabalho - CLT
+    </a>.
+</p>
+## Description <br>
 
-## Description
+<p>
+    A calculadora de salário deverá utilizar como base as tabelas do INSS e do IRRF (atualizadas) para realizar o
+    cálculo do salário líquido final, deduzindo todos os descontos, como por exemplo, a alíquita do INSS, alíquota do
+    IRRF e parcela dedutível do IRRF, a quantidade de dependentes e pensão alimentícia.<br>
 
-The Salary Calculator CLT seeks the INSS and IRRF rate, then a multiplication between the crude salary and the rates to reach the discounted foil.
+    Usando como remuneração o salário bruto, vale alimentação, vale refeição, vale transporte e gratificações.
 
-## INSS aliquot
+</p>
 
-Salary up to R$ 1,100.00 -> 7.5% <br>
-Salary between R$ 1,100.01 to R $ 2,203,48 -> 9% <br>
-Salary between R$ 2,203.49 up to R $ 3,305,22 -> 12% <br>
-Salary between R$ 3,305,23 to R $ 6,433,57 -> 14% <br>
+## Alíquota do INSS 2021 <br>
 
-## IRRF aliquot
+Salário até R$ 1.100,00 -> 7,5% <br>
+Salário entre R$ 1.100,01 à R$ 2.203,48 -> 9% <br>
+Salário entre R$ 2.203,49 à R$ 3.305,22 -> 12% <br>
+Salário entre R$ 3.305,23 à R$ 6.4333,70 -> 14% <br>
 
-Salary up to R$ 1,903.98 -> free <br>
-Salary between R$ 1,903.99 to R $ 2,826.65 -> 7.5% <br>
-Salary between R$ 2,826.66 to R $ 3,751,05 -> 15% <br>
-Salary between R$ 3,751,06 up to R $ 4,664,68 -> 22.5% <br>
-Salary above R$ 4,664.68 -> 27.5% <br>
+## Alíquota IRRF 2021 <br>
 
-### Example:
+Salário até R$ 1.903,98 -> isento <br>
+Salário entre R$ 1.903,99 à R$ 2.826,65 -> 7,5% <br>
+Salário entre R$ 2.826,66 à R$ 3.751,05 -> 15% <br>
+Salário entre R$ 3.751,06 à R$ 4.664,68 -> 22,5% <br>
+Salário acima de R$ 4.664,68 -> 27,5% <br>
 
-Deduction = R $ 1,100.00 x 7.5% <br>
-Deduction = R $ 82,50 <br>
+### Examplo: <br>
+
+Salário: R$ 6.200,00 <br>
+Vale alimentação: R$ 800,00 <br>
+Vale refeição: R$ 618,00 <br>
+Penção alimentícia (P.A): R$ 250,00 <br>
+Dependentes (D): 1 = R$ 189,59 <br>
+INSS: 14% = R$ 1.066,52 <br>
+IRRF: 27,5% = R$ 811,41 <br>
+Parcela dedutível do IRRF (PD): R$ 869,36 <br>
+Salário líquido calculado (SLF): R$ 6.806,59 <br>
+
+Remuneração (R): salário + vale alimentação + vale refeição = R$ 7.618,00 <br>
+
+Cálculo do INSS <br>
+R$ 7.618,00 (R) x 0,14 ou 14% (INSS) = R$ 1.066,52 (desconto do INSS) <br>
+
+Salário líquido (SL) <br>
+R$ 7.618,00 (R) - R$ 1.066,52 (INSS) - R$ 189,59 (D) - R$ 250,00 (P.A) = R$ 6.111,89 (SL) <br>
+
+Cálculo IRRF <br>
+R$ 6.111,89 (SL) x 0,275 ou 27,5% (IRRF) = R$ 1.680,77 (Base IR) <br>
+R$ 1.680,77 (Base IR) - R$ 869,36 (PD) = R$ 811,41 (IRRF) <br>
+
+Salário líquido final (SLF) <br>
+R$ 7.618,00 (R) - R$ 811,41 (IRRF) = R$ 6.806,59 (SLF) <br>
 
 ## Getting Started
 
-To run the project it is important to meet the requirements by installing the following dependencies.
+<p>Para executar o projeto, é importante atender aos requisitos e instalar as seguintes dependências.</p>
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-
-- npm
-- Angular
-- eslint
-- typescript
-- node
-- editorconfig extension for VSCode.
-
-### npm
-
-```sh
-npm init
-npm install npm@latest -g
-```
-
-### ESlint
-
-```sh
-npm install -D eslint
-npx eslint --init
-```
-
-### TypeScript
-
-```sh
-npm install -D typescript
-tsc --init
-```
+- NodeJS
+- Visual Studio Code
+- Google Chrome
 
 ## Installation
 
@@ -105,28 +110,24 @@ npm install
 npm start
 ```
 
-<!-- CONTRIBUTING -->
-
 ## Contributing
 
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+As contribuições são o que tornam a comunidade de código aberto como um lugar incrível para aprender, inspirar e criar.
+Quaisquer contribuições que você fizer será **muito apreciada**.
 
 1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+2. Create your Feature Branch (`git checkout -b feature/develop`)
+3. Commit your Changes (`git commit -m 'Add some develop'`)
+4. Push to the Branch (`git push origin feature/develop`)
 5. Open a Pull Request
-
-<!-- LICENSE -->
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
-<!-- CONTACT -->
+Distribuído sob a licença do MIT. Veja `LICENSE` para mais informações.
 
 ## Contact
 
 Leonardo F. Santos - [My profile](https://linktr.ee/faria.leo) - leonardofaria00@gmail.com
 
-Project Link: [https://github.com/leonardofaria00/calculo-salario-CLT](https://github.com/leonardofaria00/calculo-salario-CLT)
+Project Link:
+[https://github.com/leonardofaria00/calculo-salario-CLT](https://github.com/leonardofaria00/calculo-salario-CLT)
