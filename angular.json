@@ -125,5 +125,8 @@
       }
     }
   },
-  "defaultProject": "calculo-salario-CLT"
+  "defaultProject": "calculo-salario-CLT",
+  "cli": {
+    "analytics": "c760cec6-b91a-4674-acf3-36a0cd54e5c2"
+  }
 }
