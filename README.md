@@ -30,9 +30,7 @@
 ## Description <br>
 
 <p>
-    A calculadora de salário deverá utilizar como base as tabelas do INSS e do IRRF (atualizadas) para realizar o
-    cálculo do salário líquido final, deduzindo todos os descontos, como por exemplo, a alíquita do INSS, alíquota do
-    IRRF e parcela dedutível do IRRF, a quantidade de dependentes e pensão alimentícia.
+    A calculadora de salário deverá utilizar como base as tabelas do INSS e do IRRF (atualizadas) para realizar o cálculo do salário líquido final, deduzindo todos os descontos, como por exemplo, a alíquita do INSS, alíquota do IRRF e parcela dedutível do IRRF, a quantidade de dependentes, pensão alimentícia, desconto com despesas médicas e plano odontológico descontado em folha.
     <br>
     Usando como remuneração o salário bruto, vale alimentação, vale refeição, vale transporte e gratificações.
 </p>
