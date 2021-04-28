@@ -1,18 +1,21 @@
 export class INSS {
   aliquota: AliquotaINSS = new AliquotaINSS();
+  categoria: CategoriaINSS = new CategoriaINSS();
 }
 
 export class IRRF {
   aliquota: AliquotaIRRF = new AliquotaIRRF();
+  categoria: CategoriaIRRF = new CategoriaIRRF();
+
   dependentes: number = 0;
   parcelaDedutivel: number = 0;
 }
 
-export type keyRemuneracao = 'salario' | 'valeAlimentacao' | 'valeRefeicao';
-
-export type Remuneracao = {
-  [key in keyRemuneracao]: string;
-};
+export class Remuneracao {
+  salario: number = 0;
+  valeAlimentacao: number = 0;
+  valeRefeicao: number = 0;
+}
 
 export class Despesas {
   pensaoAlimenticia: number = 0;

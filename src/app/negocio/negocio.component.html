@@ -1,1 +1,21 @@
-<p>negocio works!</p>
+<div class="container">
+  <p>negocio works!</p>
+  <form class="form" [formGroup]="formulario">
+    <h4>Remuneração</h4>
+    <div class="mb-3">
+      <label for="salario" class="form-label">Salário</label>
+      <input type="text" class="form-control col-2" formControlName="salario" id="salario" autofocus
+        placeholder="Salário atual">
+    </div>
+    <div class="mb-3">
+      <label for="valeRefeicao" class="form-label">Vale Refeição</label>
+      <input type="text" class="form-control col-2" formControlName="valeRefeicao" id="valeRefeicao">
+    </div>
+    <div class="mb-3">
+      <label for="valeAlimentacao" class="form-label">Vale Alimentação</label>
+      <input type="text" class="form-control col-2" formControlName="valeAlimentacao" id="valeAlimentacao">
+    </div>
+    <br>
+    <input class="btn btn-primary" type="button" value="Calcular" (click)="calcular()">
+  </form>
+</div>

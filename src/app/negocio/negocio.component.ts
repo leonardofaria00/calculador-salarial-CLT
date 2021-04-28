@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Remuneracao } from './model/negocio-model';
 
 @Component({
   selector: 'app-negocio',
@@ -6,13 +8,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./negocio.component.css'],
 })
 export class NegocioComponent implements OnInit {
-  constructor() {}
+  public formulario: FormGroup = new FormGroup({});
+  public remuneracao: Remuneracao = new Remuneracao();
 
-  ngOnInit(): void {}
+  constructor(private _formBuilder: FormBuilder) {}
 
-  public calcula(): void {
-    //TODO
+  ngOnInit(): void {
+    this.formulario = this._formBuilder.group({
+      salario: [],
+      valeRefeicao: [],
+      valeAlimentacao: [],
+    });
   }
+
+  public calcular(): void {
+    this._setRemuneracoes();
+    console.log(this.remuneracao);
+  }
+
+  private _setRemuneracoes() {
+    this.remuneracao.salario = this.formulario.get('salario')?.value;
+    this.remuneracao.valeRefeicao = this.formulario.get('valeRefeicao')?.value;
+    this.remuneracao.valeAlimentacao = this.formulario.get(
+      'valeAlimentacao'
+    )?.value;
+  }
+
   private _calculaINSS(): void {
     //TODO
   }
