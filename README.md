@@ -92,7 +92,7 @@ R$ 7.618,00 (R) - R$ 811,41 (IRRF) = R$ 6.806,59 (SLF) <br>
 
 ## Como contribuir
 
-<p>Leia nosso guia de contribuição [aqui](CONTRIBUTING.md)</p>
+Leia nosso guia de contribuição [aqui](CONTRIBUTING.md)
 
 ## License
 
