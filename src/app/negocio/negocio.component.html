@@ -1,21 +1,38 @@
 <div class="container">
-  <p>negocio works!</p>
   <form class="form" [formGroup]="formulario">
-    <h4>Remuneração</h4>
+    <div class="row">
+    </div>
+
+    <h4>Remuneração Atual</h4>
     <div class="mb-3">
-      <label for="salario" class="form-label">Salário</label>
-      <input type="text" class="form-control col-2" formControlName="salario" id="salario" autofocus
+      <label for="salarioAtual" class="form-label">Salário</label>
+      <input type="text" class="form-control col-2" formControlName="salarioAtual" id="salarioAtual" autofocus
         placeholder="Salário atual">
     </div>
     <div class="mb-3">
+      <label for="valeRefeicaoAtual" class="form-label">Vale Refeição</label>
+      <input type="text" class="form-control col-2" formControlName="valeRefeicaoAtual" id="valeRefeicaoAtual">
+    </div>
+    <div class="mb-3">
+      <label for="valeAlimentacaoAtual" class="form-label">Vale Alimentação</label>
+      <input type="text" class="form-control col-2" formControlName="valeAlimentacaoAtual" id="valeAlimentacaoAtual">
+    </div>
+    <hr>
+    <!-- <h4>Remuneração Futuro</h4>
+    <div class="mb-3">
+      <label for="salarioFuturo" class="form-label">Salário</label>
+      <input type="text" class="form-control col-2" formControlName="salarioFuturo" id="salarioFuturo" autofocus
+        placeholder="Salário Futuro">
+    </div>
+    <div class="mb-3">
       <label for="valeRefeicao" class="form-label">Vale Refeição</label>
-      <input type="text" class="form-control col-2" formControlName="valeRefeicao" id="valeRefeicao">
+      <input type="text" class="form-control col-2" formControlName="valeRefeicaoFuturo" id="valeRefeicao">
     </div>
     <div class="mb-3">
       <label for="valeAlimentacao" class="form-label">Vale Alimentação</label>
-      <input type="text" class="form-control col-2" formControlName="valeAlimentacao" id="valeAlimentacao">
+      <input type="text" class="form-control col-2" formControlName="valeAlimentacaoFuturo" id="valeAlimentacao">
     </div>
-    <br>
+    <br> -->
     <input class="btn btn-primary" type="button" value="Calcular" (click)="calcular()">
   </form>
 </div>

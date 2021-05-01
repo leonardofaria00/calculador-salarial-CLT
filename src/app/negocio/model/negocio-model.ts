@@ -1,3 +1,5 @@
+import { FormGroup } from '@angular/forms';
+
 export class INSS {
   aliquota: AliquotaINSS = new AliquotaINSS();
   categoria: CategoriaINSS = new CategoriaINSS();
@@ -11,10 +13,15 @@ export class IRRF {
   parcelaDedutivel: number = 0;
 }
 
-export class Remuneracao {
-  salario: number = 0;
-  valeAlimentacao: number = 0;
-  valeRefeicao: number = 0;
+export class RemuneracaoAtual {
+  salarioAtual: number = 0;
+  valeRefeicaoAtual: number = 0;
+  valeAlimentacaoAtual: number = 0;
+}
+export class RemuneracaoFuturo {
+  salarioFuturo: number = 0;
+  valeRefeicaoFuturo: number = 0;
+  valeAlimentacaoFuturo: number = 0;
 }
 
 export class Despesas {
