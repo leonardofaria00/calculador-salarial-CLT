@@ -1,5 +1,3 @@
-import { FormGroup } from '@angular/forms';
-
 export class INSS {
   aliquota: AliquotaINSS = new AliquotaINSS();
   categoria: CategoriaINSS = new CategoriaINSS();
@@ -34,19 +32,19 @@ export class CategoriaINSS {
   categoria3: number[] = [2203.49, 3305.22];
   categoria4: number[] = [3305.23, 64333.7];
 }
+export class AliquotaINSS {
+  aliquota1: number = 0.75;
+  aliquota2: number = 0.9;
+  aliquota3: number = 0.12;
+  aliquota4: number = 0.14;
+}
 
 export class CategoriaIRRF {
   categoria1: number[] = [1903.98];
   categoria2: number[] = [1903.99, 2826.65];
   categoria3: number[] = [2826.66, 3751.05];
   categoria4: number[] = [3751.06, 4664.68];
-}
-
-export class AliquotaINSS {
-  aliquota1: number = 0.75;
-  aliquota2: number = 0.9;
-  aliquota3: number = 0.12;
-  aliquota4: number = 0.14;
+  categoria5: number[] = [4664.68];
 }
 
 export class AliquotaIRRF {

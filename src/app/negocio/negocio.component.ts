@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {
   INSS,
+  IRRF,
   RemuneracaoAtual,
   RemuneracaoFuturo,
 } from './model/negocio-model';
@@ -30,6 +31,7 @@ export class NegocioComponent implements OnInit {
   }
 
   public calcular(): void {
+    this._reset();
     this._setRemuneracaoAtual();
     this._setRemuneracaoFuturo();
     this._calculaINSS(this.remuneracaoAtual);
@@ -60,10 +62,11 @@ export class NegocioComponent implements OnInit {
   }
 
   private _calculaINSS(remuneracao: RemuneracaoAtual): void {
-    const aliquotaINSS: number = this._setAliquotaINSS(remuneracao);
+    const aliquotaINSS: number = this._getAliquotaINSS(remuneracao);
+    const aliquotaIRRF: number = this._getAliquotaIRRF(remuneracao);
   }
 
-  private _setAliquotaINSS(remuneracao: RemuneracaoAtual): number {
+  private _getAliquotaINSS(remuneracao: RemuneracaoAtual): number {
     let inss: INSS = new INSS();
     let aliquota: number = 0;
 
@@ -89,6 +92,38 @@ export class NegocioComponent implements OnInit {
     ) {
       aliquota = inss.aliquota.aliquota4; //14%
     }
+    return aliquota;
+  }
+
+  private _getAliquotaIRRF(remuneracao: RemuneracaoAtual): number {
+    let irrf: IRRF = new IRRF();
+    let aliquota: number = 0;
+
+    if (remuneracao.salarioAtual <= irrf.categoria.categoria1[0]) {
+      aliquota = irrf.aliquota.aliquota1; // 0
+    }
+
+    if (
+      remuneracao.salarioAtual >= irrf.categoria.categoria2[0] &&
+      remuneracao.salarioAtual <= irrf.categoria.categoria2[1]
+    ) {
+      aliquota = irrf.aliquota.aliquota2; //7,5%
+    }
+    if (
+      remuneracao.salarioAtual >= irrf.categoria.categoria3[0] &&
+      remuneracao.salarioAtual <= irrf.categoria.categoria3[1]
+    ) {
+      aliquota = irrf.aliquota.aliquota3; //15%
+    }
+    if (
+      remuneracao.salarioAtual >= irrf.categoria.categoria4[0] &&
+      remuneracao.salarioAtual <= irrf.categoria.categoria4[1]
+    ) {
+      aliquota = irrf.aliquota.aliquota4; //22,5%
+    }
+    if (remuneracao.salarioAtual > irrf.categoria.categoria5[0]) {
+      aliquota = irrf.aliquota.aliquota5; //27,5%
+    }
     console.log(aliquota);
     return aliquota;
   }
@@ -103,5 +138,12 @@ export class NegocioComponent implements OnInit {
 
   private _calculaRemuneracao(): void {
     //TODO
+  }
+
+  private _reset() {
+    new INSS();
+    new IRRF();
+    new RemuneracaoAtual();
+    new RemuneracaoFuturo();
   }
 }
