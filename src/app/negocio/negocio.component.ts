@@ -24,6 +24,7 @@ export class NegocioComponent implements OnInit {
       salarioAtual: [],
       valeRefeicaoAtual: [],
       valeAlimentacaoAtual: [],
+      qntDependente: [],
       salarioFuturo: [],
       valeRefeicaoFuturo: [],
       valeAlimentacaoFuturo: [],
@@ -47,6 +48,9 @@ export class NegocioComponent implements OnInit {
     this.remuneracaoAtual.valeAlimentacaoAtual = this.formulario.get(
       'valeAlimentacaoAtual'
     )?.value;
+    this.remuneracaoAtual.dependente.qntDependente = this.formulario.get(
+      'qntDependente'
+    )?.value;
   }
 
   private _setRemuneracaoFuturo() {
@@ -65,6 +69,7 @@ export class NegocioComponent implements OnInit {
     const aliquotaINSS: number = this._getAliquotaINSS(remuneracao);
     const aliquotaIRRF: number = this._getAliquotaIRRF(remuneracao);
     const parcelaDeduivel: number = this._getParcelaDedutivel(remuneracao);
+    const valorDependente: number = this._getValorDependente(remuneracao);
   }
 
   private _getAliquotaINSS(remuneracao: RemuneracaoAtual): number {
@@ -158,6 +163,15 @@ export class NegocioComponent implements OnInit {
     }
 
     return valor;
+  }
+
+  private _getValorDependente(remuneracao: RemuneracaoAtual): number {
+    let valorPorDependente: number = 0;
+    for (let i = 0; i < remuneracao.dependente.qntDependente; i++) {
+      valorPorDependente += remuneracao.dependente.valorPorDependente;
+    }
+
+    return valorPorDependente;
   }
 
   private _calculaSalarioLiquido(): void {

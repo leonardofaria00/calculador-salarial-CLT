@@ -7,7 +7,6 @@ export class IRRF {
   aliquota: AliquotaIRRF = new AliquotaIRRF();
   categoria: CategoriaIRRF = new CategoriaIRRF();
 
-  dependentes: number = 0;
   parcelaDedutivel: ParcelaDedutivel = new ParcelaDedutivel();
 }
 
@@ -15,6 +14,7 @@ export class RemuneracaoAtual {
   salarioAtual: number = 0;
   valeRefeicaoAtual: number = 0;
   valeAlimentacaoAtual: number = 0;
+  dependente: Dependente = new Dependente();
 }
 export class RemuneracaoFuturo {
   salarioFuturo: number = 0;
@@ -61,4 +61,9 @@ export class ParcelaDedutivel {
   parcelaDeduivel3: number = 354.8;
   parcelaDeduivel4: number = 636.13;
   parcelaDeduivel5: number = 869.36;
+}
+
+export class Dependente {
+  qntDependente: number = 0;
+  valorPorDependente: number = 189.59;
 }
