@@ -8,7 +8,7 @@ export class IRRF {
   categoria: CategoriaIRRF = new CategoriaIRRF();
 
   dependentes: number = 0;
-  parcelaDedutivel: number = 0;
+  parcelaDedutivel: ParcelaDedutivel = new ParcelaDedutivel();
 }
 
 export class RemuneracaoAtual {
