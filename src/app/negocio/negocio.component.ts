@@ -5,7 +5,7 @@ import {
   IRRF,
   RemuneracaoAtual,
   RemuneracaoFuturo,
-} from './model/negocio-model';
+} from './shared/negocio-model';
 
 @Component({
   selector: 'app-negocio',
@@ -28,6 +28,7 @@ export class NegocioComponent implements OnInit {
       salarioFuturo: [],
       valeRefeicaoFuturo: [],
       valeAlimentacaoFuturo: [],
+      outrasDespesas: [],
     });
   }
 
@@ -35,7 +36,7 @@ export class NegocioComponent implements OnInit {
     this._reset();
     this._setRemuneracaoAtual();
     this._setRemuneracaoFuturo();
-    this._calculaINSS(this.remuneracaoAtual);
+    this._calculaSalarioBase(this.remuneracaoAtual);
   }
 
   private _setRemuneracaoAtual() {
@@ -51,6 +52,9 @@ export class NegocioComponent implements OnInit {
     this.remuneracaoAtual.dependente.qntDependente = this.formulario.get(
       'qntDependente'
     )?.value;
+    this.remuneracaoAtual.outrasDespesas = this.formulario.get(
+      'outrasDespesas'
+    )?.value;
   }
 
   private _setRemuneracaoFuturo() {
@@ -65,11 +69,15 @@ export class NegocioComponent implements OnInit {
     )?.value;
   }
 
-  private _calculaINSS(remuneracao: RemuneracaoAtual): void {
+  private _calculaSalarioBase(remuneracao: RemuneracaoAtual): void {
     const aliquotaINSS: number = this._getAliquotaINSS(remuneracao);
     const aliquotaIRRF: number = this._getAliquotaIRRF(remuneracao);
     const parcelaDeduivel: number = this._getParcelaDedutivel(remuneracao);
     const valorDependente: number = this._getValorDependente(remuneracao);
+    console.log(`INSS: ${aliquotaINSS}`);
+    console.log(`IRRF: ${aliquotaIRRF}`);
+    console.log(`Parcela Dedutível: ${parcelaDeduivel}`);
+    console.log(`Valor Dependente: ${valorDependente}`);
   }
 
   private _getAliquotaINSS(remuneracao: RemuneracaoAtual): number {
@@ -170,7 +178,6 @@ export class NegocioComponent implements OnInit {
     for (let i = 0; i < remuneracao.dependente.qntDependente; i++) {
       valorPorDependente += remuneracao.dependente.valorPorDependente;
     }
-
     return valorPorDependente;
   }
 

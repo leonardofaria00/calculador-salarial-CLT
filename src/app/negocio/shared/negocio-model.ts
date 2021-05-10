@@ -15,6 +15,7 @@ export class RemuneracaoAtual {
   valeRefeicaoAtual: number = 0;
   valeAlimentacaoAtual: number = 0;
   dependente: Dependente = new Dependente();
+  outrasDespesas: number = 0;
 }
 export class RemuneracaoFuturo {
   salarioFuturo: number = 0;
