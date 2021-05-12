@@ -34,7 +34,7 @@ export class CategoriaINSS {
   categoria4: number[] = [3305.23, 64333.7];
 }
 export class AliquotaINSS {
-  aliquota1: number = 0.75;
+  aliquota1: number = 75;
   aliquota2: number = 0.9;
   aliquota3: number = 0.12;
   aliquota4: number = 0.14;
@@ -50,7 +50,7 @@ export class CategoriaIRRF {
 
 export class AliquotaIRRF {
   aliquota1: number = 0;
-  aliquota2: number = 0.75;
+  aliquota2: number = 75;
   aliquota3: number = 0.15;
   aliquota4: number = 0.225;
   aliquota5: number = 0.275;

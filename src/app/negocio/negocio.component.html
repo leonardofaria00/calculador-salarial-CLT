@@ -22,11 +22,43 @@
       <input type="text" class="form-control col-2" formControlName="qntDependente" id="qntDependente">
     </div>
     <div class="mb-3">
-      <label for="outrasDespesas" class="form-label">Outras Despesas</label> <span ngbTooltip="Pensão Alimenticia">
+      <label for="outrasDespesas" class="form-label">Outras Despesas</label> <span
+        ngbTooltip="Pensão Alimenticia, etc...">
         tooltip</span>
       <input type="text" class="form-control col-2" formControlName="outrasDespesas" id="outrasDespesas">
     </div>
-    <hr>
+
     <input class="btn btn-primary" type="button" value="Calcular" (click)="calcular()">
   </form>
+  <br>
+  <table class="table table-hover" *ngIf="exibeTabela">
+    <thead>
+      <tr>
+        <th scope="col">Salário Atual</th>
+        <th scope="col">Salário Final</th>
+        <th scope="col">Remuneração Total</th>
+        <th scope="col">Alíquota INSS</th>
+        <th scope="col">Desconto INSS</th>
+        <th scope="col">Alíquota IRRF</th>
+        <th scope="col">Desconto IRRF</th>
+        <th scope="col">Parcela Dedutível</th>
+        <th scope="col">Valor Dependentes</th>
+        <th scope="col">Outras Despesas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td title="Salário Bruto sem descontos">{{remuneracaoAtual.salarioAtual | currency}}</td>
+        <td>{{salarioLiquidoFinal | currency}}</td>
+        <td title="Somatório do salário e todos os benefícios">{{remuneracaoTotal | currency}}</td>
+        <td>{{aliquotaINSS | percent}}</td>
+        <td>{{descontoINSS | currency}}</td>
+        <td>{{aliquotaIRRF | percent}}</td>
+        <td>{{descontoIRRF | currency}}</td>
+        <td>{{parcelaDeduivel | currency}}</td>
+        <td>{{valorDependente | currency}}</td>
+        <td>{{remuneracaoAtual.outrasDespesas | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
