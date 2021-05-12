@@ -94,6 +94,15 @@ R$ 7.618,00 (R) - R$ 811,41 (IRRF) = R$ 6.806,59 (SLF) <br>
 
 Leia nosso guia de contribuição [aqui](CONTRIBUTING.md)
 
+## Contribuidora
+
+[<img src="https://avatars.githubusercontent.com/u/48295161?v=3&s=115" width="115"><br><sub>@DaytRibeiro </sub>](https://github.com/DaytRibeiro)
+
+## Autor
+
+| [<img src="https://avatars.githubusercontent.com/u/26885558?v=3&s=115"><br><sub>@leonardofaria00</sub>](https://github.com/leonardofaria00) |
+| :-----------------------------------------------------------------------------------------------------------------------------------------: |
+
 ## License
 
 Distribuído sob a licença do MIT. Veja `LICENSE` para mais informações.
