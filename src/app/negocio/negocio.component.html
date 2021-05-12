@@ -1,21 +1,64 @@
 <div class="container">
-  <p>negocio works!</p>
   <form class="form" [formGroup]="formulario">
-    <h4>Remuneração</h4>
+    <div class="row">
+    </div>
+
+    <h4>Remuneração Atual</h4>
     <div class="mb-3">
-      <label for="salario" class="form-label">Salário</label>
-      <input type="text" class="form-control col-2" formControlName="salario" id="salario" autofocus
+      <label for="salarioAtual" class="form-label">Salário</label>
+      <input type="text" class="form-control col-2" formControlName="salarioAtual" id="salarioAtual" autofocus
         placeholder="Salário atual">
     </div>
     <div class="mb-3">
-      <label for="valeRefeicao" class="form-label">Vale Refeição</label>
-      <input type="text" class="form-control col-2" formControlName="valeRefeicao" id="valeRefeicao">
+      <label for="valeRefeicaoAtual" class="form-label">Vale Refeição</label>
+      <input type="text" class="form-control col-2" formControlName="valeRefeicaoAtual" id="valeRefeicaoAtual">
     </div>
     <div class="mb-3">
-      <label for="valeAlimentacao" class="form-label">Vale Alimentação</label>
-      <input type="text" class="form-control col-2" formControlName="valeAlimentacao" id="valeAlimentacao">
+      <label for="valeAlimentacaoAtual" class="form-label">Vale Alimentação</label>
+      <input type="text" class="form-control col-2" formControlName="valeAlimentacaoAtual" id="valeAlimentacaoAtual">
     </div>
-    <br>
+    <div class="mb-3">
+      <label for="qntDependente" class="form-label">Número de Dependentes</label>
+      <input type="text" class="form-control col-2" formControlName="qntDependente" id="qntDependente">
+    </div>
+    <div class="mb-3">
+      <label for="outrasDespesas" class="form-label">Outras Despesas</label> <span
+        ngbTooltip="Pensão Alimenticia, etc...">
+        tooltip</span>
+      <input type="text" class="form-control col-2" formControlName="outrasDespesas" id="outrasDespesas">
+    </div>
+
     <input class="btn btn-primary" type="button" value="Calcular" (click)="calcular()">
   </form>
+  <br>
+  <table class="table table-hover" *ngIf="exibeTabela">
+    <thead>
+      <tr>
+        <th scope="col">Salário Atual</th>
+        <th scope="col">Salário Final</th>
+        <th scope="col">Remuneração Total</th>
+        <th scope="col">Alíquota INSS</th>
+        <th scope="col">Desconto INSS</th>
+        <th scope="col">Alíquota IRRF</th>
+        <th scope="col">Desconto IRRF</th>
+        <th scope="col">Parcela Dedutível</th>
+        <th scope="col">Valor Dependentes</th>
+        <th scope="col">Outras Despesas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td title="Salário Bruto sem descontos">{{remuneracaoAtual.salarioAtual | currency}}</td>
+        <td>{{salarioLiquidoFinal | currency}}</td>
+        <td title="Somatório do salário e todos os benefícios">{{remuneracaoTotal | currency}}</td>
+        <td>{{aliquotaINSS | percent}}</td>
+        <td>{{descontoINSS | currency}}</td>
+        <td>{{aliquotaIRRF | percent}}</td>
+        <td>{{descontoIRRF | currency}}</td>
+        <td>{{parcelaDeduivel | currency}}</td>
+        <td>{{valorDependente | currency}}</td>
+        <td>{{remuneracaoAtual.outrasDespesas | currency}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
