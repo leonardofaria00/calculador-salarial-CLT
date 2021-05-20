@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { faBalanceScale } from '@fortawesome/free-solid-svg-icons';
 import {
   INSS,
   IRRF,
@@ -13,6 +14,7 @@ import {
   styleUrls: ['./negocio.component.css'],
 })
 export class NegocioComponent implements OnInit {
+  public fabalancescale = faBalanceScale;
   public formulario: FormGroup = new FormGroup({});
   public remuneracaoAtual: RemuneracaoAtual = new RemuneracaoAtual();
   // public remuneracaoFuturo: RemuneracaoFuturo = new RemuneracaoFuturo();
@@ -44,7 +46,7 @@ export class NegocioComponent implements OnInit {
   }
 
   public calcular(): void {
-    this._reset();
+    this.reset();
     this._setRemuneracaoAtual();
     // this._setRemuneracaoFuturo();
     this._calculaRemuneracao();
@@ -204,7 +206,7 @@ export class NegocioComponent implements OnInit {
     this.salarioLiquidoFinal = remuneracao - descontoINSS;
   }
 
-  private _reset(): void {
+  public reset(): void {
     new INSS();
     new IRRF();
     new RemuneracaoAtual();
