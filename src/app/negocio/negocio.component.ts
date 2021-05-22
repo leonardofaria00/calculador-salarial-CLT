@@ -212,4 +212,8 @@ export class NegocioComponent implements OnInit {
     new RemuneracaoAtual();
     // new RemuneracaoFuturo();
   }
+
+  public hidenTable() {
+    this.exibeTabela = false;
+  }
 }
