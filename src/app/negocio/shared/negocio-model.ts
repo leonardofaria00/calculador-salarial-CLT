@@ -14,13 +14,15 @@ export class RemuneracaoAtual {
   salarioAtual: number = 0;
   valeRefeicaoAtual: number = 0;
   valeAlimentacaoAtual: number = 0;
-  dependente: Dependente = new Dependente();
-  outrasDespesas: number = 0;
+  dependenteAtual: Dependente = new Dependente();
+  outrasDespesasAtual: number = 0;
 }
 export class RemuneracaoFuturo {
   salarioFuturo: number = 0;
   valeRefeicaoFuturo: number = 0;
   valeAlimentacaoFuturo: number = 0;
+  dependenteFuturo: Dependente = new Dependente();
+  outrasDespesasFuturo: number = 0;
 }
 
 export class Despesas {
