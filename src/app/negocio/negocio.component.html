@@ -1,34 +1,77 @@
+<header id="header"></header>
 <div class="container">
   <form class="form" [formGroup]="formulario">
     <div class="row">
+      <div class="col-sm">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Remuneração Atual</h5>
+            <div class="mb-3">
+              <label for="salarioAtual" class="form-label">Salário</label>
+              <input type="text" class="form-control col-12" formControlName="salarioAtual" id="salarioAtual" autofocus
+                placeholder="Salário atual">
+            </div>
+            <div class="mb-3">
+              <label for="valeRefeicaoAtual" class="form-label">Vale Refeição</label>
+              <input type="text" class="form-control col-12" formControlName="valeRefeicaoAtual" id="valeRefeicaoAtual">
+            </div>
+            <div class="mb-3">
+              <label for="valeAlimentacaoAtual" class="form-label">Vale Alimentação</label>
+              <input type="text" class="form-control col-12" formControlName="valeAlimentacaoAtual"
+                id="valeAlimentacaoAtual">
+            </div>
+            <div class="mb-3">
+              <label for="qntDependente" class="form-label">Número de Dependentes</label>
+              <input type="text" class="form-control col-12" formControlName="qntDependenteAtual" id="qntDependente">
+            </div>
+            <div class="mb-3">
+              <label for="outrasDespesas" class="form-label">Outras Despesas</label> <span
+                ngbTooltip="Pensão Alimenticia, etc...">
+                tooltip</span>
+              <input type="text" class="form-control col-12" formControlName="outrasDespesasAtual" id="outrasDespesas">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm" id="iconeBalanca">
+        <fa-icon class="fa-2x" [icon]="fabalancescale"></fa-icon>
+      </div>
+      <div class="col-sm">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Remuneração Futura</h5>
+            <div class="mb-3">
+              <label for="salarioFuturo" class="form-label">Salário</label>
+              <input type="text" class="form-control col-12" formControlName="salarioFuturo" id="salarioFuturo"
+                placeholder="Salário futuro">
+            </div>
+            <div class="mb-3">
+              <label for="valeRefeicaoFuturo" class="form-label">Vale Refeição</label>
+              <input type="text" class="form-control col-12" formControlName="valeRefeicaoFuturo"
+                id="valeRefeicaoFuturo">
+            </div>
+            <div class="mb-3">
+              <label for="valeAlimentacaoFuturo" class="form-label">Vale Alimentação</label>
+              <input type="text" class="form-control col-12" formControlName="valeAlimentacaoFuturo"
+                id="valeAlimentacaoFuturo">
+            </div>
+            <div class="mb-3">
+              <label for="qntDependente" class="form-label">Número de Dependentes</label>
+              <input type="text" class="form-control col-12" formControlName="qntDependenteFuturo" id="qntDependente">
+            </div>
+            <div class="mb-3">
+              <label for="outrasDespesas" class="form-label">Outras Despesas</label> <span
+                ngbTooltip="Pensão Alimenticia, etc...">
+                tooltip</span>
+              <input type="text" class="form-control col-12" formControlName="outrasDespesasFuturo" id="outrasDespesas">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <h4>Remuneração Atual</h4>
-    <div class="mb-3">
-      <label for="salarioAtual" class="form-label">Salário</label>
-      <input type="text" class="form-control col-2" formControlName="salarioAtual" id="salarioAtual" autofocus
-        placeholder="Salário atual">
-    </div>
-    <div class="mb-3">
-      <label for="valeRefeicaoAtual" class="form-label">Vale Refeição</label>
-      <input type="text" class="form-control col-2" formControlName="valeRefeicaoAtual" id="valeRefeicaoAtual">
-    </div>
-    <div class="mb-3">
-      <label for="valeAlimentacaoAtual" class="form-label">Vale Alimentação</label>
-      <input type="text" class="form-control col-2" formControlName="valeAlimentacaoAtual" id="valeAlimentacaoAtual">
-    </div>
-    <div class="mb-3">
-      <label for="qntDependente" class="form-label">Número de Dependentes</label>
-      <input type="text" class="form-control col-2" formControlName="qntDependente" id="qntDependente">
-    </div>
-    <div class="mb-3">
-      <label for="outrasDespesas" class="form-label">Outras Despesas</label> <span
-        ngbTooltip="Pensão Alimenticia, etc...">
-        tooltip</span>
-      <input type="text" class="form-control col-2" formControlName="outrasDespesas" id="outrasDespesas">
-    </div>
-
-    <input class="btn btn-primary" type="button" value="Calcular" (click)="calcular()">
+    <br>
+    <input class="btn btn-warning button" type="reset" value="Limpar" (click)="hidenTable()">
+    <input class="btn btn-primary button" type="button" value="Calcular" (click)="calcular()">
   </form>
   <br>
   <table class="table table-hover" *ngIf="exibeTabela">
@@ -50,14 +93,14 @@
       <tr>
         <td title="Salário Bruto sem descontos">{{remuneracaoAtual.salarioAtual | currency}}</td>
         <td>{{salarioLiquidoFinal | currency}}</td>
-        <td title="Somatório do salário e todos os benefícios">{{remuneracaoTotal | currency}}</td>
-        <td>{{aliquotaINSS | percent}}</td>
-        <td>{{descontoINSS | currency}}</td>
-        <td>{{aliquotaIRRF | percent}}</td>
+        <td title="Somatório do salário e todos os benefícios">{{remuneracaoTotalAtual | currency}}</td>
+        <td>{{aliquotaINSSAtual | percent:'1.2-5'}}</td>
+        <td>{{descontoINSSAtual | currency}}</td>
+        <td>{{aliquotaIRRF | percent:'1.2-5'}}</td>
         <td>{{descontoIRRF | currency}}</td>
         <td>{{parcelaDeduivel | currency}}</td>
         <td>{{valorDependente | currency}}</td>
-        <td>{{remuneracaoAtual.outrasDespesas | currency}}</td>
+        <td>{{remuneracaoAtual.outrasDespesasAtual | currency}}</td>
       </tr>
     </tbody>
   </table>

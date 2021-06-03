@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +17,9 @@ import { NegocioModule } from './negocio/negocio.module';
     NgbModule,
     ReactiveFormsModule,
     NegocioModule,
+    FontAwesomeModule,
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],
 })
