@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="col-sm" id="iconeBalanca">
-        <fa-icon class="fa-2x" [icon]="fabalancescale"></fa-icon>
+        <fa-icon class="fa-2x" [icon]="iconCenter"></fa-icon>
       </div>
       <div class="col-sm">
         <div class="card">
@@ -70,8 +70,15 @@
       </div>
     </div>
     <br>
-    <input class="btn btn-warning button" type="reset" value="Limpar" (click)="hidenTable()">
-    <input class="btn btn-primary button" type="button" value="Calcular" (click)="calcular()">
+    <button class="btn btnLimpar" type="reset" (click)="hidenTable()">
+      <fa-icon class="fa" [icon]="iconTrash"></fa-icon>
+      Limpar
+    </button>
+
+    <button class="btn btnCalcular" (click)="calcular()">
+      <fa-icon class="fa" [icon]="iconCalculator"></fa-icon>
+      Calcular
+    </button>
   </form>
   <br>
   <table class="table table-hover" *ngIf="exibeTabela">

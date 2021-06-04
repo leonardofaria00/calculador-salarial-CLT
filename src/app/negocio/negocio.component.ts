@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { faBalanceScale } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBalanceScaleLeft,
+  faCalculator,
+  faTrashAlt,
+} from '@fortawesome/free-solid-svg-icons';
 import {
   INSS,
   IRRF,
@@ -14,7 +18,10 @@ import {
   styleUrls: ['./negocio.component.css'],
 })
 export class NegocioComponent implements OnInit {
-  public fabalancescale = faBalanceScale;
+  public iconCenter = faBalanceScaleLeft;
+  public iconCalculator = faCalculator;
+  public iconTrash = faTrashAlt;
+
   public formulario: FormGroup = new FormGroup({});
   public remuneracaoAtual: RemuneracaoAtual = new RemuneracaoAtual();
   public remuneracaoFuturo: RemuneracaoFuturo = new RemuneracaoFuturo();

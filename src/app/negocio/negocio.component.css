@@ -8,14 +8,22 @@
   width: 50%;
   opacity: 50%;
 }
-.button {
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
+
+.btnCalcular {
+  border-radius: 0.25rem !important;
+  background-color: #625be6;
+  color: #ffffff;
+  font-family: Mina;
+  font-style: normal;
+  font-weight: bold;
+}
+
+.btnLimpar {
+  border-radius: 0.25rem !important;
+  border-color: #625be6;
+  color: #625be6;
+  font-family: Mina;
+  font-style: normal;
+  font-weight: bold;
+  margin-right: 5px;
 }
