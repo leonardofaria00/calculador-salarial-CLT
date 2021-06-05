@@ -10,14 +10,14 @@ export class IRRF {
   parcelaDedutivel: ParcelaDedutivel = new ParcelaDedutivel();
 }
 
-export class RemuneracaoAtual {
+export class RemuneracaoAtual /*implements RemuneracaoAbstract*/ {
   salarioAtual: number = 0;
   valeRefeicaoAtual: number = 0;
   valeAlimentacaoAtual: number = 0;
   dependenteAtual: Dependente = new Dependente();
   outrasDespesasAtual: number = 0;
 }
-export class RemuneracaoFuturo {
+export class RemuneracaoFuturo /*implements RemuneracaoAbstract*/ {
   salarioFuturo: number = 0;
   valeRefeicaoFuturo: number = 0;
   valeAlimentacaoFuturo: number = 0;
@@ -69,4 +69,13 @@ export class ParcelaDedutivel {
 export class Dependente {
   qntDependente: number = 0;
   valorPorDependente: number = 189.59;
+}
+
+export interface RemuneracaoInterface {
+  calculaSalario(): void;
+}
+export abstract class RemuneracaoAbstract implements RemuneracaoInterface {
+  calculaSalario(): void {
+    throw new Error('Method not implemented.');
+  }
 }

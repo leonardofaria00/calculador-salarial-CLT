@@ -43,6 +43,10 @@ export class NegocioComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
+    this.formBuilderGenerate();
+  }
+
+  private formBuilderGenerate() {
     this.formulario = this._formBuilder.group({
       salarioAtual: [],
       valeRefeicaoAtual: [],
@@ -143,13 +147,15 @@ export class NegocioComponent implements OnInit {
   }
 
   private _setRemuneracaoFuturo(): RemuneracaoFuturo {
-    this.remuneracaoFuturo.salarioFuturo =
-      this.formulario.get('salarioFuturo')?.value;
-    this.remuneracaoFuturo.valeRefeicaoFuturo =
-      this.formulario.get('valeRefeicaoFuturo')?.value;
-    this.remuneracaoFuturo.valeAlimentacaoFuturo = this.formulario.get(
-      'valeAlimentacaoFuturo'
-    )?.value;
+    this.remuneracaoFuturo.salarioFuturo = parseInt(
+      this.formulario.get('salarioFuturo')?.value
+    );
+    this.remuneracaoFuturo.valeRefeicaoFuturo = parseInt(
+      this.formulario.get('valeRefeicaoFuturo')?.value
+    );
+    this.remuneracaoFuturo.valeAlimentacaoFuturo = parseInt(
+      this.formulario.get('valeAlimentacaoFuturo')?.value
+    );
     this.remuneracaoFuturo.dependenteFuturo.qntDependente = parseInt(
       this.formulario.get('qntDependenteFuturo')?.value
     );
@@ -215,7 +221,7 @@ export class NegocioComponent implements OnInit {
     this._calculaINSS(remuneracao, this.aliquotaINSSAtual);
   }
 
-  private _calculaINSS(aliquotaINSS: number, remuneracao: number): void {
+  private _calculaINSS(remuneracao: number, aliquotaINSS: number): void {
     this.descontoINSSAtual = aliquotaINSS * remuneracao;
   }
   private _getAliquotaINSSSalarioFuturo(remuneracao: number): void {
@@ -244,7 +250,7 @@ export class NegocioComponent implements OnInit {
     this._calculaINSSFuturo(remuneracao, this.aliquotaINSSFuturo);
   }
 
-  private _calculaINSSFuturo(aliquotaINSS: number, remuneracao: number): void {
+  private _calculaINSSFuturo(remuneracao: number, aliquotaINSS: number): void {
     this.descontoINSSFuturo = aliquotaINSS * remuneracao;
   }
 
