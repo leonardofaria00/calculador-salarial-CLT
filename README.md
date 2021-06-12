@@ -105,7 +105,8 @@ Leia nosso guia de contribuição [aqui](CONTRIBUTING.md)
 
 ## Contribuidora
 
-[<img src="https://avatars.githubusercontent.com/u/48295161?v=3&s=115" width="115"><br><sub>@DaytRibeiro </sub>](https://github.com/DaytRibeiro)
+| [<img src="https://avatars.githubusercontent.com/u/48295161?v=3&s=115" width="115"><br><sub>@DaytRibeiro </sub>](https://github.com/DaytRibeiro) |
+| :----------------------------------------------------------------------------------------------------------------------------------------------: |
 
 ## Autor
 
