@@ -73,20 +73,15 @@ export class NegocioComponent implements OnInit {
     this.reset();
     this._calculaSalarioAtual();
     this._calculaSalarioFuturo();
-
-    this.exibeTabela = true;
   }
 
   private _calculaSalarioAtual() {
-    debugger;
     const remuneracaoAtual: RemuneracaoAtual = this._setRemuneracaoAtual();
 
     this.remuneracaoTotalAtual =
       this._calculaRemuneracaoAtual(remuneracaoAtual);
 
-    this.aliquotaINSSAtual = this._getAliquotaINSSSalario(
-      this.remuneracaoTotalAtual
-    );
+    this.aliquotaINSSAtual = this._getAliquotaINSS(this.remuneracaoTotalAtual);
 
     this.descontoINSSAtual = this._calculaINSS(
       this.remuneracaoTotalAtual,
@@ -124,15 +119,17 @@ export class NegocioComponent implements OnInit {
       this.remuneracaoTotalAtual,
       this.descontoIRRFAtual
     );
+
+    this.exibeTabela = true;
   }
 
   private _calculaSalarioFuturo() {
     const remuneracaoFuturo: RemuneracaoFuturo = this._setRemuneracaoFuturo();
 
     this.remuneracaoTotalFuturo =
-      this._calculaRemuneracaoFututo(remuneracaoFuturo);
+      this._calculaRemuneracaoFuturo(remuneracaoFuturo);
 
-    this.aliquotaINSSFuturo = this._getAliquotaINSSSalario(
+    this.aliquotaINSSFuturo = this._getAliquotaINSS(
       this.remuneracaoTotalFuturo
     );
 
@@ -213,15 +210,15 @@ export class NegocioComponent implements OnInit {
   }
 
   private _calculaRemuneracaoAtual(remuneracao: RemuneracaoAtual): number {
-    let remunecacao =
+    let remunecacao: number =
       remuneracao.salarioAtual +
       remuneracao.valeRefeicaoAtual +
       remuneracao.valeAlimentacaoAtual;
     return remunecacao;
   }
 
-  private _calculaRemuneracaoFututo(remuneracao: RemuneracaoFuturo): number {
-    let remunecacao =
+  private _calculaRemuneracaoFuturo(remuneracao: RemuneracaoFuturo): number {
+    let remunecacao: number =
       remuneracao.salarioFuturo +
       remuneracao.valeRefeicaoFuturo +
       remuneracao.valeAlimentacaoFuturo;
@@ -255,9 +252,9 @@ export class NegocioComponent implements OnInit {
     return parseFloat(salarioLiquido.toFixed(2));
   }
 
-  private _getAliquotaINSSSalario(remuneracao: number): number {
+  private _getAliquotaINSS(remuneracao: number): number {
     const inss: INSS = new INSS();
-    let valorAliquota = 0;
+    let valorAliquota: number = 0;
 
     if (remuneracao <= inss.categoria.categoria1[0]) {
       valorAliquota = inss.aliquota.aliquota1; // 7,5%
@@ -269,12 +266,14 @@ export class NegocioComponent implements OnInit {
     ) {
       valorAliquota = inss.aliquota.aliquota2; //9%
     }
+
     if (
       remuneracao >= inss.categoria.categoria3[0] &&
       remuneracao <= inss.categoria.categoria3[1]
     ) {
       valorAliquota = inss.aliquota.aliquota3; //12%
     }
+
     if (remuneracao >= inss.categoria.categoria4[0]) {
       valorAliquota = inss.aliquota.aliquota4; //14%
     }
@@ -283,7 +282,9 @@ export class NegocioComponent implements OnInit {
   }
 
   private _calculaINSS(remuneracao: number, aliquotaINSS: number): number {
-    return aliquotaINSS * remuneracao;
+    let valor: number = aliquotaINSS * remuneracao;
+
+    return parseFloat(valor.toFixed(2));
   }
 
   private _getAliquotaIRRF(salarioLiquido: number): number {
@@ -300,18 +301,21 @@ export class NegocioComponent implements OnInit {
     ) {
       aliquotaIRRF = irrf.aliquota.aliquota2; //7,5%
     }
+
     if (
       salarioLiquido >= irrf.categoria.categoria3[0] &&
       salarioLiquido <= irrf.categoria.categoria3[1]
     ) {
       aliquotaIRRF = irrf.aliquota.aliquota3; //15%
     }
+
     if (
       salarioLiquido >= irrf.categoria.categoria4[0] &&
       salarioLiquido <= irrf.categoria.categoria4[1]
     ) {
       aliquotaIRRF = irrf.aliquota.aliquota4; //22,5%
     }
+
     if (salarioLiquido > irrf.categoria.categoria5[0]) {
       aliquotaIRRF = irrf.aliquota.aliquota5; //27,5%
     }
@@ -319,8 +323,7 @@ export class NegocioComponent implements OnInit {
   }
 
   private _calculaBaseIR(aliquotaIRRF: number, salarioLiquido: number): number {
-    let valorBase: number = 0;
-    valorBase = aliquotaIRRF * salarioLiquido;
+    let valorBase: number = aliquotaIRRF * salarioLiquido;
 
     return parseFloat(valorBase.toFixed(2));
   }
@@ -366,7 +369,9 @@ export class NegocioComponent implements OnInit {
   }
 
   private _calculaIRRF(valorBaseIR: number, parcelaDedutivel: number): number {
-    return valorBaseIR - parcelaDedutivel;
+    let valor: number = valorBaseIR - parcelaDedutivel;
+
+    return parseFloat(valor.toFixed(2));
   }
 
   private _calculaSalarioLiquidoFinal(
@@ -381,9 +386,6 @@ export class NegocioComponent implements OnInit {
     new IRRF();
     new RemuneracaoAtual();
     new RemuneracaoFuturo();
-  }
-
-  public hidenTable() {
     this.exibeTabela = false;
   }
 }
