@@ -9,13 +9,22 @@
   proposta de trabalho.
   <br />
   <br />
-  <a href="https://calculo-salario-clt.vercel.app/" target="_blank">View Demo</a>
+  <a href="https://comparador-entre-salarios-clt.vercel.app/" target="_blank">View Demo</a>
   |
-  <a href="https://github.com/leonardofaria00/calculo-salario-CLT/issues">Report Bug</a>
+  <a href="https://github.com/leonardofaria00/comparador-entre-salarios-clt/issues">Report Bug</a>
   |
-  <a href="https://github.com/leonardofaria00/calculo-salario-CLT/issues">Request Feature</a>
+  <a href="https://github.com/leonardofaria00/comparador-entre-salarios-clt/issues">Request Feature</a>
 </p>
 </p>
+
+## Protótipos
+
+<div style="text-align: center;">
+    <img src="src/assets/images/Proposta-01.png" alt="Tela inicial" width="40%" style="margin: 10px;">
+    <img src="src/assets/images/Proposta-02.png" alt="Tela inicial" width="40%" style="margin: 10px;">
+    <img src="src/assets/images/Proposta-03.png" alt="Tela inicial" width="40%" style="margin: 10px;">
+    <img src="src/assets/images/Proposta-04.png" alt="Tela inicial" width="40%" style="margin: 10px;">
+  </div>
 
 ## Motivação
 
