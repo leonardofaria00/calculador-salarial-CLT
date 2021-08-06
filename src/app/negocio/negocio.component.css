@@ -45,16 +45,16 @@
 }
 
 .titulo-fundo {
-  /* width: 863px; */
-  /* height: 76px; */
-  /* left: 289px; */
-  /* top: 1806px; */
+  width: 863px;
+  height: 76px;
+  left: 289px;
+  top: 1806px;
   font-family: Mina;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
   line-height: 76px;
-  /* display: flex; */
+  display: flex;
   align-items: center;
   color: #ffffff;
 }
