@@ -70,7 +70,7 @@
       </div>
     </div>
     <br>
-    <button class="btn btnLimpar" type="reset" (click)="hidenTable()">
+    <button class="btn btnLimpar" type="reset" (click)="reset()">
       <fa-icon class="fa" [icon]="iconTrash"></fa-icon>
       Limpar
     </button>
@@ -85,29 +85,29 @@
     <thead>
       <tr>
         <th scope="col">Salário Atual</th>
-        <th scope="col">Salário Final</th>
         <th scope="col">Remuneração Total</th>
         <th scope="col">Alíquota INSS</th>
-        <th scope="col">Desconto INSS</th>
         <th scope="col">Alíquota IRRF</th>
-        <th scope="col">Desconto IRRF</th>
         <th scope="col">Parcela Dedutível</th>
-        <th scope="col">Valor Dependentes</th>
+        <th scope="col">Desconto INSS</th>
+        <th scope="col">Desconto IRRF</th>
+        <th scope="col">Desconto Dependentes</th>
         <th scope="col">Outras Despesas</th>
+        <th scope="col">Salário Líquido Final</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td title="Salário Bruto sem descontos">{{remuneracaoAtual.salarioAtual | currency}}</td>
-        <td>{{salarioLiquidoFinalAtual | currency}}</td>
         <td title="Somatório do salário e todos os benefícios">{{remuneracaoTotalAtual | currency}}</td>
         <td>{{aliquotaINSSAtual | percent:'1.2-5'}}</td>
-        <td>{{descontoINSSAtual | currency}}</td>
         <td>{{aliquotaIRRFAtual | percent:'1.2-5'}}</td>
-        <td>{{descontoIRRFAtual | currency}}</td>
         <td>{{parcelaDeduivelAtual | currency}}</td>
+        <td>{{descontoINSSAtual | currency}}</td>
+        <td>{{descontoIRRFAtual | currency}}</td>
         <td>{{valorDependenteAtual | currency}}</td>
         <td>{{remuneracaoAtual.outrasDespesasAtual | currency}}</td>
+        <td>{{salarioLiquidoFinalAtual | currency}}</td>
       </tr>
     </tbody>
   </table>
