@@ -1,7 +1,3 @@
-#header {
-  padding-top: 50px;
-}
-
 #iconeBalanca {
   text-align: center;
   margin: auto;
@@ -26,4 +22,39 @@
   font-style: normal;
   font-weight: bold;
   margin-right: 5px;
+}
+
+#header {
+  width: auto;
+  height: 539px;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(99.64deg, #5c45ea -12.44%, #86f4c6 116.77%);
+}
+
+#body-calc {
+  margin-top: 30px;
+}
+
+#fundo {
+  width: auto;
+  height: 841px;
+  /* left: 0px; */
+  top: 1732px;
+  background: linear-gradient(99.64deg, #5c45ea -12.44%, #86f4c6 116.77%);
+}
+
+.titulo-fundo {
+  /* width: 863px; */
+  /* height: 76px; */
+  /* left: 289px; */
+  /* top: 1806px; */
+  font-family: Mina;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 76px;
+  /* display: flex; */
+  align-items: center;
+  color: #ffffff;
 }
