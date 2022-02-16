@@ -35,7 +35,12 @@
     Líquido - iDinheiro</a>, o comparador entre salários é uma solução web que além de calcular os descontos,
   apresentará um comparatívo entre propostas de trabalho para permitir que os profissionais regidos pela
   <a href="http://www.planalto.gov.br/ccivil_03/decreto-lei/del5452.htm" target="_blank">CLT</a>, possam decidir de
-  maneira financeira, qual é a proposta mais vantajosa.
+  maneira financeira, qual é a proposta mais vantajosa.<br>
+  Será levado em conta todos os descontos do INSS e IRPF bem como os descontos CLT para saber no final o salário liquido. Com isso será possível comparar o que sobra com o salário de outras modalidades trabalhistas que não cobrar tantas taxas e descontos.
+
+
+
+O foco é saber quanto o profissional vai receber.
 </p>
 
 ## Descrição
