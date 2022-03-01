@@ -77,6 +77,11 @@ De R$ 2.826,66 à R$ 3.751,05 -> R$ 354,80 <br>
 De R$ 3.751,06 à R$ 4.664,68 -> R$ 636,13 <br>
 Salário acima de R$ 4.664,68 -> R$ 869,36 <br>
 
+### Dependente
+
+Cada dependente -> R$ 189,59 <br>
+
+
 ### Examplo:
 
 Salário: R$ 6.200,00 <br>
@@ -84,8 +89,8 @@ Vale alimentação: R$ 800,00 <br>
 Vale refeição: R$ 618,00 <br>
 Outras Despesas (O.D): R$ 250,00 <br>
 Dependentes (D): 1 = R$ 189,59 <br>
-INSS: 14% = R$ 1.066,52 <br>
-IRRF: 27,5% = R$ 811,41 <br>
+INSS: 14% = R$ 1.066,52 (toda remuneração) <br>
+IRRF: 27,5% = R$ 811,41 (cálculo IR) <br>
 Parcela dedutivel do IRRF (PD): R$ 869,36 <br>
 Salário líquido calculado (SLF): R$ 6.806,59 <br>
 
@@ -97,8 +102,8 @@ R$ 7.618,00 (R) x 0,14 ou 14% (INSS) = R$ 1.066,52 (desconto do INSS) <br>
 Salário líquido (SL) <br>
 R$ 7.618,00 (R) - R$ 1.066,52 (INSS) - R$ 189,59 (D) - R$ 250,00 (O.D) = R$ 6.111,89 (SL) <br>
 
-Cálculo IRRF <br>
-R$ 6.111,89 (SL) x 0,275 ou 27,5% (IRRF) = R$ 1.680,77 (Base IR) <br>
+Cálculo IR <br>
+R$ 6.111,89 (SL) x 0,275 ou 27,5% (IR) = R$ 1.680,77 (Base IR) <br>
 R$ 1.680,77 (Base IR) - R$ 869,36 (PD) = R$ 811,41 (IRRF) <br>
 
 Salário líquido final (SLF) <br>
